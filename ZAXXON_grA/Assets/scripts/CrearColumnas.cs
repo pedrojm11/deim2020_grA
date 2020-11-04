@@ -14,15 +14,28 @@ public class CrearColumnas : MonoBehaviour
     {
         //Intancio el prefab en coordenadas 0,0,0
         //Instantiate(MyColumn);
-
-        //Instancio el prefab en la posición del objeto de referencia
-        //Como tenemos su componente Transform, le indicamos que lo que quiero es su posición
-        Instantiate(MyColumn, RefPos.position, Quaternion.identity);
+        CrearColumna();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetButtonDown("Fire1"))
+        {
+            CrearColumna();
+        }
+
+    }
+
+    void CrearColumna()
+    {
+        //Creo un nuevo vector3
+        float posRandom = Random.Range(0f, 32f);
+        Vector3 DestPos = new Vector3(0, 0, posRandom);
+        Vector3 NewPos = RefPos.position + DestPos;
+        //Instancio el prefab en la posición del objeto de referencia
+        //Como tenemos su componente Transform, le indicamos que lo que quiero es su posición
+        Instantiate(MyColumn, NewPos, Quaternion.identity);
     }
 }
