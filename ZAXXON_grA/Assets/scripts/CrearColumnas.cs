@@ -12,10 +12,9 @@ public class CrearColumnas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Intancio el prefab en coordenadas 0,0,0
-        //Instantiate(MyColumn);
-        CrearColumna();
-        
+        StartCoroutine("ColumnCorrutine");
+
+
     }
 
     // Update is called once per frame
@@ -31,11 +30,24 @@ public class CrearColumnas : MonoBehaviour
     void CrearColumna()
     {
         //Creo un nuevo vector3
-        float posRandom = Random.Range(0f, 32f);
+        float posRandom = Random.Range(0f, 30f);
         Vector3 DestPos = new Vector3(0, 0, posRandom);
         Vector3 NewPos = RefPos.position + DestPos;
         //Instancio el prefab en la posición del objeto de referencia
         //Como tenemos su componente Transform, le indicamos que lo que quiero es su posición
         Instantiate(MyColumn, NewPos, Quaternion.identity);
+    }
+
+    IEnumerator ColumnCorrutine()
+    {
+
+        for (int n=0; ; n++ )
+        {
+            print(n);
+            //Intancio el prefab en coordenadas 0,0,0
+            //Instantiate(MyColumn);
+            CrearColumna();
+            yield return new WaitForSeconds(1);
+        }
     }
 }
