@@ -23,11 +23,11 @@ public class Sphere : MonoBehaviour
 
     void MoverNave()
     {
-        print(transform.position.x);
+        print(transform.position.z);
         float desplY = Input.GetAxis("Vertical");
         transform.Translate(Vector3.up * Time.deltaTime * speed * desplY);
-        float desplX = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * desplX);
+        float desplZ = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.back * Time.deltaTime * speed * desplZ);
 
 
     }
