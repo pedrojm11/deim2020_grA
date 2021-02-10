@@ -3,7 +3,10 @@ guid: edce876d9bc40354fba72e2c7b8d34de
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - MyColumn: {fileID: 2388127070130277655, guid: c78899a646417e84099aebc205842f83,
+      type: 3}
+  - RefPos: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
