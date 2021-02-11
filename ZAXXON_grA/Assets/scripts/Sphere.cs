@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sphere : MonoBehaviour
 {
     public float speed = 10f;
-    
+    [SerializeField] Text speedText;
+    [SerializeField] Text timeText;
+    private string currentTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,15 @@ public class Sphere : MonoBehaviour
     {
         //Método para mover la nave con el joystick
         MoverNave();
+        //Cambio el texto de la UI, metido en la variable speedText. Debe ser una cadena, si quiero, puedo convertir el float en string //speedText.text = speed.ToString();
+        speedText.text = "Velocidad: " + speed + " Km/h";
+
+        // Obtain the current time.
+        currentTime = Time.time.ToString("f2");
+        currentTime = " " + currentTime + " ";
+
+        timeText.text = currentTime;
+
 
     }
 
