@@ -13,6 +13,7 @@ public class NaveCollider : MonoBehaviour
     {
         if (other.gameObject.tag == "Finish")
         {
+            Time.timeScale = 0f;
             Destroy(this.gameObject);          //This se refiere a la clase en la que estamos, en este caso sphere collider
         }
     }

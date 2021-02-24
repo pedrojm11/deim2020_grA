@@ -19,7 +19,7 @@ public class Camera : MonoBehaviour
     {
         //Con este código, conseguimos que siga al objeto pero con suavidad
         //La velocidad de suavizado, cuanto menor sea más brusco será el movimiento
-        Vector3 targetPosition = new Vector3(transform.position.x, playerPosition.position.y, transform.position.z);
+        Vector3 targetPosition = new Vector3(transform.position.x , playerPosition.position.y +1, playerPosition.position.z +1);
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref camaraVelocity, smoothVelocity);
     }
 }

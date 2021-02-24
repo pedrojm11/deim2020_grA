@@ -52,7 +52,8 @@ public class Sphere : MonoBehaviour
         {
             transform.Translate(Vector3.up * Time.deltaTime * speed * desplY);
 
-        } 
+        }
+       
 
     }
 }
